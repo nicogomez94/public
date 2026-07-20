@@ -91,7 +91,7 @@ get_header();
 
         <section class="how-section fade-in" id="como-usarlas">
             <div class="how-image">
-                <img src="<?php echo esc_url(pacha_asset('images/laminas-pacha-purum.jpeg')); ?>" alt="Láminas Pacha Purum">
+                <img src="<?php echo esc_url(pacha_asset('images/productos/laminas-tomate-albahaca.jpg')); ?>" alt="Lámina de tomate con albahaca Pacha Purum">
                 <span class="image-note">Fácil de<br>preparar</span>
             </div>
             <div class="how-copy">
