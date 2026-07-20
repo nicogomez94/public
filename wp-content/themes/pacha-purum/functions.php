@@ -192,28 +192,21 @@ function pacha_tarjeta_laminas_estatica() {
     <?php
 }
 
-function pacha_woocommerce_inicio() {
-    if (is_product()) {
-        echo '<main class="woo-product-page">';
-        return;
-    }
-
-    echo '<main class="woo-shop-page">';
-    if (is_shop() || is_product_taxonomy()) {
-        echo '<section class="page-hero fade-in visible"><span class="eyebrow">Tienda Pacha</span><h1>Láminas Vegetales<br><em>Pacha Purum.</em></h1><p>Origen vegetal. Forma nueva.</p></section>';
-    }
-}
-
-function pacha_woocommerce_fin() {
-    echo '</main>';
-}
-
 remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-add_action('woocommerce_before_main_content', 'pacha_woocommerce_inicio', 10);
-add_action('woocommerce_after_main_content', 'pacha_woocommerce_fin', 10);
-
 remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+add_filter('woocommerce_show_page_title', '__return_false');
+
+function pacha_abrir_barra_tienda() {
+    echo '<div class="pacha-barra-tienda">';
+}
+
+function pacha_cerrar_barra_tienda() {
+    echo '</div>';
+}
+
+add_action('woocommerce_before_shop_loop', 'pacha_abrir_barra_tienda', 15);
+add_action('woocommerce_before_shop_loop', 'pacha_cerrar_barra_tienda', 35);
 
 function pacha_catalogo_referencia() {
     return [
