@@ -129,14 +129,14 @@ get_header();
                 <a href="<?php echo esc_url(pacha_asset('docs/recetario-pacha-purum.pdf')); ?>" target="_blank" rel="noopener" class="text-link desktop-only">Ver PDF <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
             </div>
             <div class="recipe-grid">
-                <article class="recipe-card recipe-large">
+                <a class="recipe-card recipe-large recipe-card-link" href="<?php echo esc_url(pacha_asset('docs/recetario-pacha-purum.pdf')); ?>" target="_blank" rel="noopener" aria-label="Abrir el recetario Pacha Purum en PDF">
                     <img src="<?php echo esc_url(pacha_asset('images/recetario-pacha-purum.png')); ?>" alt="Recetario Láminas Vegetales Pacha Purum">
                     <div><span>Pacha Purum</span><h3>Recetario Láminas Vegetales</h3></div>
-                </article>
-                <article class="recipe-card">
+                </a>
+                <button class="recipe-card recipe-qr-trigger" type="button" aria-haspopup="dialog" aria-controls="qrRecetarioModal">
                     <img src="<?php echo esc_url(pacha_asset('images/qr-recetario-pacha-purum.jpeg')); ?>" alt="Código QR del recetario Pacha Purum">
                     <div><span>Escaneá el QR</span><h3>Descubrí nuestro recetario</h3></div>
-                </article>
+                </button>
                 <article class="recipe-card quote-card">
                     <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
                     <p>Dejate llevar por tu creatividad. Sorprendete. Sorprendé.</p>
@@ -144,6 +144,19 @@ get_header();
                 </article>
             </div>
         </section>
+
+        <div class="qr-modal" id="qrRecetarioModal" role="dialog" aria-modal="true" aria-labelledby="qrRecetarioTitulo" aria-hidden="true">
+            <button class="qr-modal-backdrop" type="button" data-qr-close aria-label="Cerrar código QR"></button>
+            <div class="qr-modal-content" role="document" tabindex="-1">
+                <button class="qr-modal-close" type="button" data-qr-close aria-label="Cerrar código QR" title="Cerrar">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="eyebrow">Recetario Pacha Purum</span>
+                <h2 id="qrRecetarioTitulo">Escaneá el QR</h2>
+                <img src="<?php echo esc_url(pacha_asset('images/qr-recetario-pacha-purum.jpeg')); ?>" alt="Código QR para abrir el recetario Pacha Purum">
+                <a class="button button-primary" href="<?php echo esc_url(pacha_asset('docs/recetario-pacha-purum.pdf')); ?>" target="_blank" rel="noopener">Abrir PDF <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            </div>
+        </div>
 
         <section class="newsletter fade-in">
             <span class="newsletter-icon"><i class="fa-solid fa-seedling" aria-hidden="true"></i></span>

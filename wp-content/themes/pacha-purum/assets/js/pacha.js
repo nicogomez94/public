@@ -7,7 +7,10 @@
   const panelBusqueda = $('.search-panel');
   const inputBusqueda = $('#globalSearch');
   const resultados = $('#searchResults');
+  const modalQr = $('#qrRecetarioModal');
+  const botonQr = $('.recipe-qr-trigger');
   const productos = window.pachaDatos?.productos || [];
+  let focoAnteriorQr = null;
 
   function cerrarBusqueda() {
     if (!panelBusqueda) return;
@@ -23,6 +26,23 @@
     toast.classList.add('show');
     clearTimeout(mostrarToast.timer);
     mostrarToast.timer = setTimeout(() => toast.classList.remove('show'), 2600);
+  }
+
+  function abrirModalQr() {
+    if (!modalQr) return;
+    focoAnteriorQr = document.activeElement;
+    modalQr.classList.add('open');
+    modalQr.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
+    $('.qr-modal-content', modalQr)?.focus();
+  }
+
+  function cerrarModalQr() {
+    if (!modalQr?.classList.contains('open')) return;
+    modalQr.classList.remove('open');
+    modalQr.setAttribute('aria-hidden', 'true');
+    if (!panelBusqueda?.classList.contains('open')) document.body.classList.remove('no-scroll');
+    focoAnteriorQr?.focus();
   }
 
   if (menuToggle && menu) {
@@ -41,6 +61,9 @@
 
   $('.search-close')?.addEventListener('click', cerrarBusqueda);
 
+  botonQr?.addEventListener('click', abrirModalQr);
+  $$('[data-qr-close]').forEach((boton) => boton.addEventListener('click', cerrarModalQr));
+
   inputBusqueda?.addEventListener('input', (event) => {
     const consulta = event.target.value.trim().toLowerCase();
     const encontrados = consulta
@@ -58,7 +81,9 @@
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') cerrarBusqueda();
+    if (event.key !== 'Escape') return;
+    cerrarModalQr();
+    cerrarBusqueda();
   });
 
   $$('[data-scroll]').forEach((boton) => {
@@ -91,4 +116,3 @@
 
   document.body.addEventListener('added_to_cart', () => mostrarToast('Producto agregado al carrito'));
 })();
-

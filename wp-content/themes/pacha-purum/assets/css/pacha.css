@@ -93,7 +93,9 @@ em { color: var(--tomato); font-style: italic; font-weight: 500; }
 .hero-sun::before { top: -30px; right: 20px; }
 .hero-sun::after { bottom: 12px; left: -25px; }
 .pack { position: absolute; padding: 24px 19px; border: 1px solid rgba(25,53,45,.18); border-radius: 7px 7px 18px 18px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 22px 35px rgba(25,53,45,.2); }
-.pack::before { content: ""; position: absolute; inset: 0; opacity: .25; background-image: radial-gradient(circle, #fff 1px, transparent 1.5px); background-size: 14px 14px; }
+.pack::before { content: ""; position: absolute; inset: 0; opacity: .58; background-repeat: no-repeat; background-position: center; background-size: cover; }
+.pack-tomato::before { background-image: url("../images/productos/laminas-tomate-albahaca.jpg"); }
+.pack-spinach::before { background-image: url("../images/productos/laminas-berenjena.jpg"); }
 .pack > * { position: relative; z-index: 1; }
 .pack-top { width: calc(100% + 38px); margin: -24px -19px 28px; padding: 8px; border-radius: 6px 6px 0 0; color: var(--cream); background: var(--ink); font-size: 7px; font-weight: 700; letter-spacing: .12em; }
 .pack i { margin-bottom: 10px; font-size: 23px; }
@@ -171,6 +173,10 @@ em { color: var(--tomato); font-style: italic; font-weight: 500; }
 .recipe-card > div { position: absolute; z-index: 2; left: 24px; right: 24px; bottom: 22px; color: white; }
 .recipe-card span { font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .recipe-card h3 { margin: 7px 0 0; font: 500 28px var(--display); }
+.recipe-card-link,
+.recipe-qr-trigger { width: 100%; border: 0; padding: 0; display: block; color: inherit; background: transparent; font: inherit; text-align: left; cursor: pointer; }
+.recipe-card-link:focus-visible,
+.recipe-qr-trigger:focus-visible { outline: 3px solid var(--spinach); outline-offset: 4px; }
 .quote-card { padding: 35px; display: flex; flex-direction: column; justify-content: space-between; color: var(--ink); background: var(--lime); }
 .quote-card::after { display: none; }
 .quote-card i { font-size: 30px; }
@@ -183,6 +189,16 @@ em { color: var(--tomato); font-style: italic; font-weight: 500; }
 .newsletter-form input::placeholder { color: #e2b9c8; }
 .newsletter-form button { width: 55px; border: 0; color: var(--beet); background: var(--lime); cursor: pointer; }
 .newsletter > small { color: #e2b9c8; }
+
+.qr-modal { position: fixed; z-index: 130; inset: 0; padding: 20px; display: grid; place-items: center; opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+.qr-modal.open { opacity: 1; pointer-events: auto; }
+.qr-modal-backdrop { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; padding: 0; background: rgba(16,39,31,.88); cursor: pointer; }
+.qr-modal-content { position: relative; z-index: 1; width: min(100%, 520px); max-height: calc(100vh - 40px); padding: 34px; display: flex; flex-direction: column; align-items: center; gap: 18px; background: var(--paper); box-shadow: var(--shadow); overflow: auto; text-align: center; transform: translateY(18px); transition: transform .25s ease; }
+.qr-modal.open .qr-modal-content { transform: none; }
+.qr-modal-content h2 { margin: 0; font: 500 clamp(34px, 6vw, 52px)/1 var(--display); letter-spacing: 0; }
+.qr-modal-content img { width: min(100%, 330px); max-height: 56vh; object-fit: contain; }
+.qr-modal-close { position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; border: 0; border-radius: 50%; display: grid; place-items: center; color: var(--cream); background: var(--ink); cursor: pointer; }
+.qr-modal-close:hover { color: var(--ink); background: var(--lime); }
 
 .page-hero { padding: 90px 6% 65px; text-align: center; background: var(--cream); }
 .page-hero h1 { max-width: 950px; margin-left: auto; margin-right: auto; font-size: clamp(46px,8vw,82px); }
