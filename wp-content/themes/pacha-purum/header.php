@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 
 <header class="site-header" id="siteHeader">
     <a class="brand" href="<?php echo esc_url(home_url('/')); ?>" aria-label="Ir al inicio">
-        <span class="brand-mark"><i class="fa-solid fa-seedling" aria-hidden="true"></i></span>
+        <span class="brand-mark"><img src="<?php echo esc_url(pacha_asset('images/branding/logo-pacha-purum.png')); ?>" alt="" aria-hidden="true"></span>
         <span class="brand-name">Pacha Purum</span>
     </a>
     <nav class="desktop-nav" aria-label="Navegación principal">

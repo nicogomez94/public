@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
     <div class="footer-main">
         <div class="footer-brand">
             <a class="brand" href="<?php echo esc_url(home_url('/')); ?>">
-                <span class="brand-mark"><i class="fa-solid fa-seedling" aria-hidden="true"></i></span>
+                <span class="brand-mark"><img src="<?php echo esc_url(pacha_asset('images/branding/logo-pacha-purum.png')); ?>" alt="" aria-hidden="true"></span>
                 <span class="brand-name">Pacha Purum</span>
             </a>
             <p>Origen vegetal.<br>Forma nueva.</p>
@@ -33,7 +33,7 @@ if (!defined('ABSPATH')) {
         </div>
     </div>
     <div class="footer-bottom">
-        <span>© <?php echo esc_html(date('Y')); ?> Pacha Purum</span>
+        <span>© <?php echo esc_html(date('Y')); ?> <span class="brand-wordmark brand-wordmark--inline">Pacha Purum</span></span>
         <span>Láminas Vegetales</span>
         <span>100% Vegetal · Sin TACC · Sin Conservantes</span>
         <a href="https://zigodev.com.ar" target="_blank" rel="noopener noreferrer">Hecho por zigodev</a>

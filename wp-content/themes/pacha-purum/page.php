@@ -11,7 +11,7 @@ $es_checkout = function_exists('is_checkout') && is_checkout();
     <?php if ($es_checkout) : ?>
         <div class="checkout-header">
             <a href="<?php echo esc_url(pacha_url_carrito()); ?>"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Volver al carrito</a>
-            <div class="checkout-brand"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Pacha Purum</div>
+            <div class="checkout-brand"><img src="<?php echo esc_url(pacha_asset('images/branding/logo-pacha-purum.png')); ?>" alt="" aria-hidden="true"> <span class="brand-wordmark">Pacha Purum</span></div>
             <span><i class="fa-solid fa-lock" aria-hidden="true"></i> Compra segura</span>
         </div>
     <?php else : ?>

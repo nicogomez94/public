@@ -9,7 +9,7 @@ get_header();
         <section class="hero fade-in">
             <div class="hero-copy">
                 <span class="eyebrow"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Origen vegetal. Forma nueva.</span>
-                <h1>Pacha Purum<br><em>Láminas Vegetales</em></h1>
+                <h1><span class="brand-wordmark">Pacha Purum</span><br><em>Láminas Vegetales</em></h1>
                 <p>Creamos láminas 100% vegetales para que cocinar sea una experiencia diferente: más natural, más consciente y, sobre todo, deliciosa.</p>
                 <div class="hero-actions">
                     <a class="button button-primary" href="<?php echo esc_url(pacha_url_tienda()); ?>">Conocé tus láminas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
@@ -27,7 +27,7 @@ get_header();
                 <div class="pack pack-hero pack-tomato">
                     <div class="pack-top">LÁMINAS VEGETALES</div>
                     <i class="fa-solid fa-seedling" aria-hidden="true"></i>
-                    <strong>Pacha Purum</strong>
+                    <strong class="brand-wordmark">Pacha Purum</strong>
                     <small>origen vegetal · forma nueva</small>
                     <span>Sin conservantes</span>
                 </div>
@@ -57,7 +57,7 @@ get_header();
             <div class="section-heading">
                 <div>
                     <span class="eyebrow">Conocé tus</span>
-                    <h2>Láminas<br><em>Pacha Purum.</em></h2>
+                    <h2>Láminas<br><em class="brand-wordmark">Pacha Purum.</em></h2>
                 </div>
                 <a class="text-link desktop-only" href="<?php echo esc_url(pacha_url_tienda()); ?>">Ver tienda <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
@@ -97,7 +97,7 @@ get_header();
             <div class="how-copy">
                 <span class="eyebrow light">Antes de comenzar</span>
                 <h2>Conocé tus<br><em>láminas.</em></h2>
-                <p>Cada lámina Pacha Purum está elaborada artesanalmente con vegetales cuidadosamente seleccionados. Nuestro objetivo es que disfrutes una cocina más natural, respetando el sabor y las propiedades propias de cada ingrediente.</p>
+                <p>Cada lámina <span class="brand-wordmark brand-wordmark--inline">Pacha Purum</span> está elaborada artesanalmente con vegetales cuidadosamente seleccionados. Nuestro objetivo es que disfrutes una cocina más natural, respetando el sabor y las propiedades propias de cada ingrediente.</p>
                 <ol class="steps">
                     <li><b>01</b><span><strong>Listas para usar</strong><small>Ya están cocidas y pueden consumirse directamente o incorporarse a preparaciones frías y calientes.</small></span></li>
                     <li><b>02</b><span><strong>Manipulalas con delicadeza</strong><small>Poseen una textura suave y flexible. Manipulalas con cuidado para conservar su forma.</small></span></li>
@@ -113,7 +113,7 @@ get_header();
                 <h2>Resignificar<br>lo vegetal.<br><em>Inspirarte.</em></h2>
             </div>
             <div class="story-copy">
-                <p class="lead">Pacha Purum nace desde un lugar honesto.</p>
+                <p class="lead"><span class="brand-wordmark brand-wordmark--inline">Pacha Purum</span> nace desde un lugar honesto.</p>
                 <p>Nuestra intención no es reemplazar la harina. Nuestra intención es resignificar lo vegetal. Demostrar que los vegetales pueden ocupar el lugar principal de un plato, sorprendiendo por su sabor, su textura y su versatilidad.</p>
                 <a href="<?php echo esc_url(home_url('/nosotros/')); ?>" class="text-link">Conocé nuestra raíz <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
@@ -131,7 +131,7 @@ get_header();
             <div class="recipe-grid">
                 <a class="recipe-card recipe-large recipe-card-link" href="<?php echo esc_url(pacha_asset('docs/recetario-pacha-purum.pdf')); ?>" target="_blank" rel="noopener" aria-label="Abrir el recetario Pacha Purum en PDF">
                     <img src="<?php echo esc_url(pacha_asset('images/recetario-pacha-purum.png')); ?>" alt="Recetario Láminas Vegetales Pacha Purum">
-                    <div><span>Pacha Purum</span><h3>Recetario Láminas Vegetales</h3></div>
+                    <div><span class="brand-wordmark">Pacha Purum</span><h3>Recetario Láminas Vegetales</h3></div>
                 </a>
                 <button class="recipe-card recipe-qr-trigger" type="button" aria-haspopup="dialog" aria-controls="qrRecetarioModal">
                     <img src="<?php echo esc_url(pacha_asset('images/qr-recetario-pacha-purum.jpeg')); ?>" alt="Código QR del recetario Pacha Purum">
@@ -140,7 +140,7 @@ get_header();
                 <article class="recipe-card quote-card">
                     <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
                     <p>Dejate llevar por tu creatividad. Sorprendete. Sorprendé.</p>
-                    <span>Bienvenido al universo Pacha Purum.</span>
+                    <span>Bienvenido al universo <span class="brand-wordmark brand-wordmark--inline">Pacha Purum</span>.</span>
                 </article>
             </div>
         </section>
@@ -151,7 +151,7 @@ get_header();
                 <button class="qr-modal-close" type="button" data-qr-close aria-label="Cerrar código QR" title="Cerrar">
                     <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                 </button>
-                <span class="eyebrow">Recetario Pacha Purum</span>
+                <span class="eyebrow">Recetario <span class="brand-wordmark brand-wordmark--inline">Pacha Purum</span></span>
                 <h2 id="qrRecetarioTitulo">Escaneá el QR</h2>
                 <img src="<?php echo esc_url(pacha_asset('images/qr-recetario-pacha-purum.jpeg')); ?>" alt="Código QR para abrir el recetario Pacha Purum">
                 <a class="button button-primary" href="<?php echo esc_url(pacha_asset('docs/recetario-pacha-purum.pdf')); ?>" target="_blank" rel="noopener">Abrir PDF <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>

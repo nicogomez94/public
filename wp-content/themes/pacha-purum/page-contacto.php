@@ -7,7 +7,7 @@ get_header();
 <main>
     <section class="page-hero fade-in">
         <span class="eyebrow">Contacto</span>
-        <h1>Pacha Purum<br><em>Láminas Vegetales.</em></h1>
+        <h1><span class="brand-wordmark">Pacha Purum</span><br><em>Láminas Vegetales.</em></h1>
         <p>Origen vegetal. Forma nueva.</p>
     </section>
     <section class="section story fade-in">
@@ -20,9 +20,8 @@ get_header();
             <p>100% Vegetal · Sin TACC · Sin Conservantes.</p>
             <a href="<?php echo esc_url(pacha_asset('docs/recetario-pacha-purum.pdf')); ?>" target="_blank" rel="noopener" class="text-link">Ver recetario <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
         </div>
-        <div class="story-seal"><i class="fa-solid fa-seedling" aria-hidden="true"></i><span>PACHA PURUM<br>LÁMINAS VEGETALES</span></div>
+        <div class="story-seal"><i class="fa-solid fa-seedling" aria-hidden="true"></i><span><span class="brand-wordmark">Pacha Purum</span><br>LÁMINAS VEGETALES</span></div>
     </section>
 </main>
 <?php
 get_footer();
-

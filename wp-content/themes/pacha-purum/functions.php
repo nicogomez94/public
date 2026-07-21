@@ -32,7 +32,7 @@ add_action('after_setup_theme', 'pacha_configurar_theme');
 function pacha_cargar_assets() {
     wp_enqueue_style(
         'pacha-fuentes',
-        'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap',
+        'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap',
         [],
         null
     );
@@ -220,15 +220,6 @@ function pacha_catalogo_referencia() {
             'imagen' => 'laminas-zanahoria.jpg',
         ],
         [
-            'nombre' => 'Láminas de frutas deshidratadas',
-            'slug' => 'laminas-de-frutas-deshidratadas',
-            'precio' => '14000',
-            'descripcion_corta' => 'Presentación de 3 láminas de frutas deshidratadas.',
-            'descripcion' => 'Láminas de fruta deshidratada en una presentación de 3 unidades. El catálogo muestra opciones frutales de mango, kiwi, ananá y durazno. Están listas para usar y no requieren hidratación previa.',
-            'categoria' => 'Láminas de fruta',
-            'imagen' => 'laminas-frutas-mango.jpg',
-        ],
-        [
             'nombre' => 'Lámina de tomate con albahaca',
             'slug' => 'lamina-de-tomate-con-albahaca',
             'precio' => '13000',
@@ -414,3 +405,35 @@ function pacha_sincronizar_catalogo() {
 
     return count($slugs_validos);
 }
+
+/**
+ * Retira definitivamente el producto discontinuado aunque el catálogo todavía
+ * no se haya vuelto a sincronizar desde el administrador.
+ */
+function pacha_retirar_laminas_frutas_deshidratadas() {
+    if (!class_exists('WooCommerce') || get_option('pacha_frutas_retiradas_v1')) {
+        return;
+    }
+
+    $publicacion = get_page_by_path('laminas-de-frutas-deshidratadas', OBJECT, 'product');
+    if ($publicacion && get_post_status($publicacion->ID) !== 'trash') {
+        wp_trash_post($publicacion->ID);
+    }
+
+    update_option('pacha_frutas_retiradas_v1', 1, false);
+}
+add_action('init', 'pacha_retirar_laminas_frutas_deshidratadas', 30);
+
+function pacha_quitar_frutas_del_carrito($carrito) {
+    if (!$carrito instanceof WC_Cart) {
+        return;
+    }
+
+    foreach ($carrito->get_cart() as $clave => $item) {
+        $producto = $item['data'] ?? null;
+        if ($producto instanceof WC_Product && $producto->get_slug() === 'laminas-de-frutas-deshidratadas') {
+            $carrito->remove_cart_item($clave);
+        }
+    }
+}
+add_action('woocommerce_cart_loaded_from_session', 'pacha_quitar_frutas_del_carrito');

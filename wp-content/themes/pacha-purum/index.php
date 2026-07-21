@@ -6,7 +6,7 @@ get_header();
 ?>
 <main class="page-default">
     <section class="page-hero fade-in visible">
-        <span class="eyebrow">Pacha Purum</span>
+        <span class="eyebrow brand-wordmark">Pacha Purum</span>
         <h1><?php single_post_title(); ?></h1>
     </section>
     <section class="section fade-in visible">
@@ -22,4 +22,3 @@ get_header();
 </main>
 <?php
 get_footer();
-

@@ -8,7 +8,7 @@ get_header();
     <?php if (is_shop() || is_product_taxonomy()) : ?>
         <section class="page-hero fade-in visible">
             <span class="eyebrow">Tienda</span>
-            <h1>Láminas Vegetales<br><em>Pacha Purum.</em></h1>
+            <h1>Láminas Vegetales<br><em class="brand-wordmark">Pacha Purum.</em></h1>
             <p>Origen vegetal. Forma nueva.</p>
         </section>
     <?php endif; ?>
