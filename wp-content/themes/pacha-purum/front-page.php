@@ -25,20 +25,13 @@ get_header();
                 <span class="hero-sun"></span>
                 <span class="orbit-copy">100% VEGETAL · SIN TACC ·</span>
                 <div class="pack pack-hero pack-tomato">
-                    <div class="pack-top">LÁMINAS VEGETALES</div>
-                    <i class="fa-solid fa-seedling" aria-hidden="true"></i>
-                    <strong class="brand-wordmark">Pacha Purum</strong>
-                    <small>origen vegetal · forma nueva</small>
-                    <span>Sin conservantes</span>
+                    <img src="<?php echo esc_url(home_url('/img/catalogo/heropic.png')); ?>" alt="Recetario Láminas Vegetales Pacha Purum">
                 </div>
                 <div class="pack pack-side pack-spinach">
-                    <div class="pack-top">LÁMINAS VEGETALES</div>
-                    <i class="fa-solid fa-seedling" aria-hidden="true"></i>
-                    <strong>Vegetales</strong>
-                    <small>artesanal y natural</small>
+                    <img src="<?php echo esc_url(home_url('/img/catalogo/heropic2.png')); ?>" alt="Índice del recetario Pacha Purum con láminas vegetales">
                 </div>
                 <span class="hero-sticker">SIN<br><b>TACC</b></span>
-                <span class="scribble"><i class="fa-solid fa-arrow-turn-up" aria-hidden="true"></i> fácil de preparar</span>
+                <span class="scribble"><i class="fa-solid fa-arrow-turn-up" aria-hidden="true"></i><span>fácil de<br>preparar</span></span>
             </div>
         </section>
 

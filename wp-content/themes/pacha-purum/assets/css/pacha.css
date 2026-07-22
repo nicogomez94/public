@@ -37,7 +37,7 @@ h1, h2, h3, p { margin-top: 0; }
 .brand-mark { width: 38px; height: 44px; display: grid; place-items: center; flex: 0 0 auto; }
 .brand-mark img { width: 100%; height: 100%; object-fit: contain; }
 .brand-name,
-.brand-wordmark { font-family: var(--brand); font-style: normal; font-weight: 400; letter-spacing: .18em; text-transform: uppercase; }
+.brand-wordmark { font-family: var(--brand); font-style: normal; font-weight: 400; letter-spacing: .06em; text-transform: uppercase; }
 .brand-name { font-size: 17px; line-height: 1; white-space: nowrap; }
 .brand-wordmark--inline { letter-spacing: .06em; }
 .desktop-nav { display: none; align-items: center; gap: 32px; font-size: 13px; font-weight: 600; }
@@ -73,6 +73,7 @@ h1, h2, h3, p { margin-top: 0; }
 .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--spinach); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .eyebrow.light { color: var(--lime); }
 .hero h1, .page-hero h1 { max-width: 700px; margin: 18px 0 20px; font: 500 clamp(48px,12vw,90px)/.91 var(--display); letter-spacing: 0; }
+.hero h1 { font-size: clamp(38px,10vw,68px); letter-spacing: .06em; }
 em { color: var(--tomato); font-style: italic; font-weight: 500; }
 .hero-copy > p { max-width: 570px; color: var(--ink-2); font-size: clamp(16px,2vw,19px); line-height: 1.65; }
 .hero-actions { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
@@ -96,10 +97,9 @@ em { color: var(--tomato); font-style: italic; font-weight: 500; }
 .hero-sun::before, .hero-sun::after { content: ""; position: absolute; width: 80px; height: 80px; border: 1px solid rgba(25,53,45,.18); border-radius: 50%; }
 .hero-sun::before { top: -30px; right: 20px; }
 .hero-sun::after { bottom: 12px; left: -25px; }
-.pack { position: absolute; padding: 24px 19px; border: 1px solid rgba(25,53,45,.18); border-radius: 7px 7px 18px 18px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 22px 35px rgba(25,53,45,.2); }
-.pack::before { content: ""; position: absolute; inset: 0; opacity: .58; background-repeat: no-repeat; background-position: center; background-size: cover; }
-.pack-tomato::before { background-image: url("../images/productos/laminas-tomate-albahaca.jpg"); }
-.pack-spinach::before { background-image: url("../images/productos/laminas-berenjena.jpg"); }
+.pack { position: absolute; overflow: hidden; border: 1px solid rgba(25,53,45,.18); border-radius: 8px 8px 18px 18px; display: flex; align-items: center; justify-content: center; background: var(--paper); box-shadow: 0 22px 35px rgba(25,53,45,.2); }
+.pack::before { content: none; }
+.pack img { width: 100%; height: 100%; object-fit: cover; }
 .pack > * { position: relative; z-index: 1; }
 .pack-top { width: calc(100% + 38px); margin: -24px -19px 28px; padding: 8px; border-radius: 6px 6px 0 0; color: var(--cream); background: var(--ink); font-size: 7px; font-weight: 700; letter-spacing: .12em; }
 .pack i { margin-bottom: 10px; font-size: 23px; }
@@ -110,8 +110,8 @@ em { color: var(--tomato); font-style: italic; font-weight: 500; }
 .pack-side { z-index: 2; width: 190px; height: 280px; right: 8%; bottom: 20px; color: #244431; background: #9ab360; transform: rotate(10deg); }
 .hero-sticker { position: absolute; z-index: 5; right: 5%; top: 3%; width: 73px; height: 73px; border: 2px solid var(--ink); border-radius: 50%; display: grid; place-content: center; text-align: center; color: var(--cream); background: var(--beet); font: 700 9px/1.15 var(--sans); transform: rotate(9deg); }
 .hero-sticker b { font-size: 16px; }
-.scribble { position: absolute; z-index: 5; bottom: 2%; left: 3%; font: italic 12px var(--display); transform: rotate(-7deg); }
-.scribble i { margin-right: 5px; }
+.scribble { position: absolute; z-index: 5; bottom: 2%; left: 3%; width: 86px; height: 86px; border: 2px solid var(--ink); border-radius: 50%; display: grid; place-items: center; align-content: center; gap: 3px; padding: 13px; color: var(--ink); background: var(--lime); text-align: center; font: 700 10px/1.15 var(--sans); text-transform: uppercase; transform: rotate(-7deg); box-shadow: 0 15px 28px rgba(25,53,45,.16); }
+.scribble i { margin: 0 0 3px; font-size: 14px; }
 .orbit-copy { display: none; }
 
 .marquee { padding: 13px 0; color: var(--cream); background: var(--tomato); overflow: hidden; transform: rotate(-.7deg) scale(1.02); }
@@ -402,7 +402,7 @@ em { color: var(--tomato); font-style: italic; font-weight: 500; }
   .desktop-nav { display: flex; }
   .mobile-menu { display: none; }
   .hero { min-height: calc(100vh - 114px); grid-template-columns: .92fr 1.08fr; padding-top: 50px; padding-bottom: 50px; }
-  .hero h1 { font-size: clamp(60px,8vw,104px); }
+  .hero h1 { font-size: clamp(46px,6vw,76px); letter-spacing: .06em; }
   .hero-visual { min-height: 560px; }
   .pack-hero { width: 260px; height: 380px; top: 70px; }
   .pack-side { width: 235px; height: 340px; bottom: 35px; }
