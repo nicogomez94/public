@@ -1,0 +1,15 @@
+# Local migration artifacts and credentials
+*.sql
+*.sql.gz
+wp-config.php
+local-xdebuginfo.php
+
+# OS metadata
+.DS_Store
+**/.DS_Store
+
+# Runtime logs and caches
+wp-content/uploads/wc-logs/*.log
+wp-content/cache/
+wp-content/upgrade/
+wp-content/debug.log
